@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brenda</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div class="container">
+    <!-- Fixed header inside container -->
+    <div class="header">
+      <div class="header-left">
+        <img src="images/brenda-avatar.png" alt="Brenda" class="avatar" id="brendaAvatar" />
+        <h1>Brenda</h1>
+      </div>
+    </div>
+
+    <!-- Main content area (switches between Talk/Text) -->
+    <div class="main">
+
+      <!-- TALK MODE -->
+      <section id="panelTalk" class="panel panel-talk">
+        <div class="voice-visualizer">
+          <canvas id="waveform"></canvas>
+        </div>
+
+        <div class="info">
+          <div id="transcript" class="transcript"></div>
+        </div>
+      </section>
+
+      <!-- TEXT MODE -->
+      <section id="panelText" class="panel panel-text hidden">
+        <div id="chatMessages" class="chat-messages" aria-live="polite"></div>
+
+        <div class="chat-inputbar">
+          <textarea id="chatInput" class="chat-input" rows="1" placeholder="Type a message..."></textarea>
+          <button id="chatSendBtn" class="chat-send" type="button">Send</button>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Bottom controls (Talk/Text buttons) -->
+    <div class="activate-buttons-frame">
+      <div class="row">
+        <button id="toggleBtnTalk" class="btn-toggle-talk btn-connect-talk" type="button">Talk</button>
+        <button id="toggleBtnText" class="btn-toggle-text btn-connect-text" type="button">Text</button>
+      </div>
+
+      <div class="row">
+        <div class="column">
+          <p class="hintTalk" id="hintTalk">Click to Speak</p>
+        </div>
+        <div class="column">
+          <p class="hintText" id="hintText">Click to Text</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="config.js"></script>
+  <script src="voiceAgent.js"></script>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
